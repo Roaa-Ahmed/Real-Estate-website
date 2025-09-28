@@ -1,1 +1,44 @@
 @import "tailwindcss";
+@import "./styles/fonts.css";
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@theme {
+  --color-primary: #4f46e5;
+  --color-hover-pri: #5356eb;
+  --color-active-pri: #3730a3;
+
+  --color-secondary: #f3f4f6;
+  --color-hover-sec: #e5e7eb;
+  --color-active-sec: #d1d5db;
+}
+
+.flexItemCenter {
+  @apply flex items-center flex-wrap;
+}
+
+.textSort {
+  @apply block
+    text-[#4B5563]
+    text-base
+     leading-6
+    font-medium
+    text-nowrap;
+}
+@layer base {
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+  }
+
+  input:-moz-autofill,
+  textarea:-moz-autofill,
+  select:-moz-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+    -moz-text-fill-color: #000 !important;
+  }
+}
