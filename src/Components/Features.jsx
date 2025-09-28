@@ -157,7 +157,36 @@ const Features = () => {
 
   return (
     <>
-      <style jsx>{`
+      {/* <style jsx>{`
+        @keyframes slideInRight {
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-10px);
+          }
+          60% {
+            transform: translateY(-5px);
+          }
+        }
+        
+        .animate-slide-in-right {
+          animation: slideInRight 0.3s ease-out;
+        }
+      `}</style> */}
+
+        <style>{`
         @keyframes slideInRight {
           from {
             transform: translateX(100%);

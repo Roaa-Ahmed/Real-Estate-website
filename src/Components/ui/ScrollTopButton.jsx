@@ -37,8 +37,10 @@ useEffect(() => {
         onClick={scrollToTop}
         sx={{
           position: "fixed",
-          bottom: 50,
-          right: 16,
+          bottom: 120,
+          right: 30,
+          width:54,
+          height:54
         }}
       >
         <KeyboardArrowUpIcon />
