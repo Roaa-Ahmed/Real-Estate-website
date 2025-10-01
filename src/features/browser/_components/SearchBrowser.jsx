@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // LOCAL COMPONENTS
-import { Section, Heading, Button, ScrollInTo } from "@/components";
+import { Section, Heading, Button, ScrollInTo } from "@/Components";
 import { SelectSearch, useParams } from "@/features/browser";
 import {
   PRICE_RANGE_OPTIONS,

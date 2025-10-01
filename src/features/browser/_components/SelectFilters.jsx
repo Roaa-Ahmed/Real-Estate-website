@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 // LOCAL COMPONENTS
-import { ScrollInTo } from "@/components";
+import { ScrollInTo } from "@/Components";
 import {
   RangeOption,
   IconLabel,

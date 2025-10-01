@@ -1,7 +1,7 @@
 import React, { useCallback, useContext } from "react";
 
 //  LOCAL COMPONENTS
-import { Section, Heading, ScrollInTo } from "@/components";
+import { Section, Heading, ScrollInTo } from "@/Components";
 import {
   CardBrowser,
   PaginationSection,

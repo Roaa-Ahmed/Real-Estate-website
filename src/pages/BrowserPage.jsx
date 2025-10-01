@@ -1,7 +1,7 @@
 import React, {  useEffect, useState } from "react";
 
 // LOCAL COMPONENTS
-import { Section } from "@/components";
+import { Section } from "@/Components";
 import {
   ResultsBrowser,
   SearchBrowser,

@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 
 // LOCAL COMPONENTS
-import { Section, Button, ScrollInTo } from "@/components";
+import { Section, Button, ScrollInTo } from "@/Components";
 import { SelectSearch, SelectFilters, useParams } from "@/features/browser";
 
 // EXTERNAL COMPONENTS

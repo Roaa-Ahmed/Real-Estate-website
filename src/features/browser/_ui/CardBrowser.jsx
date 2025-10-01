@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 
 //  LOCAL COMPONENTS
-import {Button} from "@/components";
+import {Button} from "@/Components";
 import {IconLabel,DetailsRooms} from "@/features/browser";
 import { cardVariants } from "../../../animations/BrowserAnimation";
 
