@@ -1,6 +1,6 @@
 import React from "react";
 // LOCAL COMPONENTS
-import {Footer,Navbar,ScrollTopButton} from'@/components'
+import {Footer,Navbar,ScrollTopButton} from'@/Components'
 import { layoutVariants } from "../animations/BrowserAnimation";
 
 // EXTARNAL COMPONENTS

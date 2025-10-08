@@ -1,6 +1,6 @@
 import React from "react";
 // LOCAL COMPONENTS
-import { useResponsiveMenuProps} from "@/features/browser";
+import { useResponsiveMenuProps } from "@/features/browser";
 
 // EXTARNAL COMPONENTS
 import MenuItem from "@mui/material/MenuItem";
@@ -22,7 +22,7 @@ const GroupedSelect = React.memo(
     updateParams,
     variant,
   }) => {
-    const [value, setValue] = React.useState( defaultValue??"");
+    const [value, setValue] = React.useState(defaultValue ?? "");
 
     const menuProps = useResponsiveMenuProps();
 

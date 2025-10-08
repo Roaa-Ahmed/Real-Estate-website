@@ -1,5 +1,5 @@
 import React from 'react'
-import {Section,Button} from '@/components'
+import {Section,Button} from '@/Components'
 
 const ErrorSection = ({error,refetch}) => {
   return (
