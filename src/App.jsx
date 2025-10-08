@@ -12,7 +12,6 @@ import { router } from "./router";
 import React, { lazy, Suspense } from "react";
 import "./index.css";
 // LOCAL COMPONENTS
-import { ParamsProvider } from "./context/ParamsProvider";
 import Layout from "./layouts/Layout";
 import { LoadingSection } from "./features/browser";
 import RootLayout from "./pages/RootLayout";
@@ -51,9 +50,7 @@ function App() {
     <Footer/> */}
     
       {/* <RouterProvider router={router}/> */}
-
       {/* Start Browser Page */}
-      <ParamsProvider>
         <QueryClientProvider client={queryClient}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -88,7 +85,6 @@ function App() {
             buttonPosition="bottom-left"
           />
         </QueryClientProvider>
-      </ParamsProvider>
       {/* Start Browser Page */}
     </>
   );

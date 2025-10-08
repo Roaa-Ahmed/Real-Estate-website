@@ -22,8 +22,11 @@ export {default as ErrorSection} from './_ui/ErrorSection';
 export { default as useLoadMoreOnIntersect } from "./hooks/useLoadMore";
 export { default as useResponsiveMenuProps } from "./hooks/useResponsiveMenuProps";
 export { default as usePropertiesQuery } from "./hooks/usePropertiesQuery";
-export { default as useParams } from "./hooks/handleKeyParams";
 
 // src/features/browser/api
 
 export { default as fetchProperties } from "./api/PropertiesApi";
+
+// src/features/browser/store
+export { default as useProductsFilters } from "./store/EstateStore";
+

@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from "react";
+import React, { useCallback } from "react";
 
 //  LOCAL COMPONENTS
 import { Section, Heading, ScrollInTo } from "@/Components";
@@ -7,22 +7,19 @@ import {
   PaginationSection,
   useLoadMoreOnIntersect,
   usePropertiesQuery,
-  useParams,
   LoadingSection,
   ErrorSection,
+  useProductsFilters,
 } from "@/features/browser";
-import { BaramsContext } from "../../../context/ParamsProvider";
 
 // EXTERNAL COMPONENTS
 import { CircularProgress, useMediaQuery } from "@mui/material";
 import { flushSync } from "react-dom";
 
-
-const ResultsBrowser = React.memo(({ view, mode }) => {
-
+const ResultsBrowser = React.memo(({ view, modeNavigate }) => {
   const isMobile = useMediaQuery("(max-width:768px)");
-  const { params } = useContext(BaramsContext);
-  const { handleKeyParams } = useParams();
+  const { status, page, sort, search, filters, limit } = useProductsFilters();
+  const setPage = useProductsFilters((s) => s.setPage);
 
   const {
     isLoading,
@@ -36,22 +33,26 @@ const ResultsBrowser = React.memo(({ view, mode }) => {
     loadMore,
     isLoadingMore,
     items,
-  } = usePropertiesQuery(params);
-  
+  } = usePropertiesQuery({status, page, sort, search, filters, limit});
+
   const sentinelRef = useLoadMoreOnIntersect(() => {
-    if (hasMore) loadMore?.();
+    if (hasMore&&!isLoadingMore ) {
+      loadMore?.();
+    console.log(loadMore())
+    console.log(hasMore)
+    }
   });
-  const saleOrRent = mode === "FOR_SALE" ? "sale" : "rent";
+  const saleOrRent = modeNavigate === "FOR_SALE" ? "sale" : "rent";
 
   const handleChange = useCallback(
     (nextPage) => {
-      if (nextPage === params._page) return;
+      if (nextPage === page) return;
       flushSync(() => {
-        handleKeyParams({ _page: nextPage });
+        setPage(nextPage);
       });
       ScrollInTo("result-section");
     },
-    [params._page, handleKeyParams]
+    [page, setPage]
   );
 
   if (isLoading || (isFetching && !isSuccess)) {
@@ -84,7 +85,7 @@ const ResultsBrowser = React.memo(({ view, mode }) => {
           items.map((item, ind) => (
             <CardBrowser key={item.id} view={view} data={item} i={ind} />
           ))}
-        {isMobile && hasMore && (
+        {isMobile && hasMore && !isLoadingMore&&(
           <div
             className="w-full max-w-2xl h-64 flex items-center justify-center "
             style={{ overflowAnchor: "none" }}
@@ -102,7 +103,7 @@ const ResultsBrowser = React.memo(({ view, mode }) => {
           onChange={(nextPage) => {
             handleChange(nextPage);
           }}
-          page={params._page}
+          page={page}
         />
       )}
     </Section>
