@@ -1,7 +1,7 @@
 import React from "react";
 
 // LOCAL COMPONENTS
-import {Section} from "@/components";
+import {Section} from "@/Components";
 import { layoutVariants } from "../../../animations/BrowserAnimation";
 
 //  EXTARNAL COMPONENTS

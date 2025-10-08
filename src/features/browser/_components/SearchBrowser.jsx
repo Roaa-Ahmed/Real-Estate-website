@@ -2,8 +2,8 @@ import React, { useCallback, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // LOCAL COMPONENTS
-import { Section, Heading, Button, ScrollInTo } from "@/components";
-import { SelectSearch, useParams } from "@/features/browser";
+import { Section, Heading, Button, ScrollInTo } from "@/Components";
+import { SelectSearch,useProductsFilters } from "@/features/browser";
 import {
   PRICE_RANGE_OPTIONS,
   PROPERTY_TYPES,
@@ -23,7 +23,10 @@ const SearchBrowser = React.memo(() => {
     city_like: null,
   });
   const prevDraft = useRef(draft);
-  const { handleKeyParams } = useParams();
+  const setStatus = useProductsFilters((s) => s.setStatus);
+  const setSearch = useProductsFilters((s) => s.setSearch);
+    const setPage = useProductsFilters((s) => s.setPage);
+
 
   const current = location.pathname.startsWith("/rent") ? "rent" : "buy";
 
@@ -31,11 +34,13 @@ const SearchBrowser = React.memo(() => {
 
   const handleClickButBuyRent = useCallback(
     (value, mode) => {
-      handleKeyParams({ status: value });
+      setStatus(value);
+      setPage(1)
       navigate(`/${mode}`);
       ScrollInTo("result-section");
     },
-    [handleKeyParams, navigate]
+    [navigate, setStatus,setPage]
+
   );
 
   const handleSetDraft = useCallback((newDraft) => {
@@ -64,16 +69,18 @@ const SearchBrowser = React.memo(() => {
   const handleSearch = (e) => {
     e?.preventDefault?.();
 
-    handleKeyParams({
+    setSearch({
+      type: draft.type,
       price_lte: draft.price_lte,
       price_gte: draft.price_gte,
       city_like: draft.city_like,
-      type: draft.type,
-      _page: 1,
     });
+          setPage(1)
 
     checkDraftChange();
   };
+
+  
 
   return (
     <Section variant="!text-black">

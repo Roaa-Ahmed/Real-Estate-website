@@ -1,6 +1,6 @@
 import React from 'react'
 // LOCAL COMPONENTS
-import {Section,Heading} from '@/components'
+import {Section,Heading} from '@/Components'
 
 // EXTERNAL COMPONENTS
 import { CircularProgress } from '@mui/material'

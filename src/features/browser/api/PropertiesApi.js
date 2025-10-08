@@ -1,10 +1,11 @@
 import axios from "axios";
+import { Search } from "lucide-react";
 const isDev = process.env.NODE_ENV === "development";
 export const API_URL = isDev
   ? "http://localhost:5174"
   : "https://real-estate-hub-data-api.onrender.com";
 
-function buildPropertyParams(filters = {}) {
+function buildPropertyParams(status, page, sort, search, filters, limit) {
   const p = new URLSearchParams();
 
   const setIf = (key, val) => {
@@ -12,31 +13,51 @@ function buildPropertyParams(filters = {}) {
       p.set(key, String(val));
   };
   // BUY & RENT
-  setIf("status", filters.status);
+  setIf("status", status);
+
   // FILTERS
+
   setIf("bedrooms", filters.bedrooms);
   setIf("bathrooms", filters.bathrooms);
   setIf("area_sqm_gte", filters.area_sqm_gte);
   setIf("area_sqm_lte", filters.area_sqm_lte);
 
   // SORT
-  setIf("_sort", filters._sort);
-  setIf("_order", filters._order && String(filters._order).toLowerCase());
+  setIf("_sort", sort.sort);
+  setIf("_order", sort.order && String(sort.order).toLowerCase());
+
   //  SEARCH
-  setIf("type", filters.type && filters.type.toUpperCase());
-  setIf("price_gte", filters.price_lte);
-  setIf("price_lte", filters.price_gte);
-  setIf("city_like", filters.city_like);
+
+  setIf("type", search.type && search.type.toUpperCase());
+  setIf("price_gte", search.price_lte);
+  setIf("price_lte", search.price_gte);
+  setIf("city_like", search.city_like);
+
   // PAGINATION
-  setIf("_limit", filters._limit);
-  setIf("_page", filters._page);
+  setIf("_limit", limit);
+  setIf("_page", page);
 
   return p;
 }
 
- async function fetchProperties({ signal, filters = {} }) {
-  const params = buildPropertyParams(filters);
+const fetchProperties = async ({
+  signal,
+  status,
+  page,
+  sort,
+  search,
+  filters,
+  limit,
+}) => {
+  const params = buildPropertyParams(
+    status,
+    page,
+    sort,
+    search,
+    filters,
+    limit
+  );
   const res = await axios.get(`${API_URL}/properties`, { signal, params });
   return res;
-}
-export default fetchProperties
+};
+export default fetchProperties;

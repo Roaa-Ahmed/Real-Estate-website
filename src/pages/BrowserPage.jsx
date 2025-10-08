@@ -1,31 +1,33 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // LOCAL COMPONENTS
-import { Section } from "@/components";
+import { Section } from "@/Components";
 import {
   ResultsBrowser,
   SearchBrowser,
   FilterBrowser,
-  useParams,
+  useProductsFilters,
 } from "@/features/browser";
 
-const BrowserPage =React.memo(({ mode }) => {
+const BrowserPage = React.memo(({ mode }) => {
   const [view, setView] = useState(true);
-  const { handleKeyParams } = useParams();
+  const setStatus = useProductsFilters((s) => s.setStatus);
+  const setPage = useProductsFilters((s) => s.setPage);
 
   useEffect(() => {
-    handleKeyParams({ _page: 1, status: mode });
-  }, [handleKeyParams, mode]);
+    setStatus(mode);
+    setPage(1);
+  }, [mode]);
 
   return (
     <>
       <Section variant="border-b-0 !p-0">
-        <SearchBrowser mode={mode} />
+        <SearchBrowser modeNavigate={mode} />
         <FilterBrowser view={view} setView={setView} />
-        <ResultsBrowser view={view} setView={setView} mode={mode} />
+        <ResultsBrowser view={view} setView={setView} modeNavigate={mode} />
       </Section>
     </>
   );
-})
+});
 
 export default BrowserPage;
