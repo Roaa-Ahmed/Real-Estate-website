@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 
 // LOCAL COMPONENTS
-import { Section, Button, ScrollInTo } from "@/Components";
+import { Section, ButtonLocal, ScrollInTo } from "@/Components";
 import {
   SelectSearch,
   SelectFilters,
@@ -154,7 +154,7 @@ const FilterBrowser = React.memo(({ view, setView }) => {
           <div className={`flexItemCenter gap-2 !hidden sm:!flex justify-end`}>
             {viewBtns.map(({ val, Icon, label }) => {
               return (
-                <Button
+                <ButtonLocal
                   key={label}
                   variant={`!p-1.5 ${
                     view == val ? "purple-interactive" : "gray-interactive"
@@ -166,7 +166,7 @@ const FilterBrowser = React.memo(({ view, setView }) => {
                   aria-label={label}
                 >
                   <Icon className="w-6 h-5  !text-current" aria-hidden="true" />
-                </Button>
+                </ButtonLocal>
               );
             })}
           </div>

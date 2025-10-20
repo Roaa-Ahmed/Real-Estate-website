@@ -12,7 +12,7 @@ import { router } from "./router";
 import React, { lazy, Suspense } from "react";
 import "./index.css";
 // LOCAL COMPONENTS
-import Layout from "./layouts/Layout";
+import MainLayout from "./layouts/MainLayout";
 import { LoadingSection } from "./features/browser";
 import RootLayout from "./pages/RootLayout";
 
@@ -33,6 +33,8 @@ const BrowserPage = lazy(() => import("./pages/BrowserPage"));
 import { queryClient } from "./lib/queryClient";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/productDetails";
+import SignupPage from "./pages/SignupPage";
+import AuthLayout from "./layouts/AuthLayout";
 
 function Fallback() {
   return <LoadingSection isAllPage={true} variant="!min-h-screen" />;
@@ -48,43 +50,48 @@ function App() {
     <WhyChooseUs/>
     <Booking/>
     <Footer/> */}
-    
+
       {/* <RouterProvider router={router}/> */}
       {/* Start Browser Page */}
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Routes>
-              {/* <Route path="/" element={<RootLayout />}> */}
-              <Route path="/" element={<Layout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="*" element={<Home />} />
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Routes>
+            {/* <Route path="/" element={<RootLayout />}> */}
+            <Route path="/" element={<MainLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="*" element={<Home />} />
 
-                <Route
-                  path="/buy"
-                  element={
-                    <Suspense fallback={<Fallback />}>
-                      <BrowserPage mode="FOR_SALE" />
-                    </Suspense>
-                  }
-                />
-                <Route
-                  path="/rent"
-                  element={
-                    <Suspense fallback={<Fallback />}>
-                      <BrowserPage mode="FOR_RENT" />
-                    </Suspense>
-                  }
-                />
-                <Route path="/product-details" element={<ProductDetails />} />
-              </Route>
-            </Routes>
-          </ThemeProvider>
-          <ReactQueryDevtools
-            initialIsOpen={false}
-            buttonPosition="bottom-left"
-          />
-        </QueryClientProvider>
+              <Route
+                path="/buy"
+                element={
+                  <Suspense fallback={<Fallback />}>
+                    <BrowserPage mode="FOR_SALE" />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/rent"
+                element={
+                  <Suspense fallback={<Fallback />}>
+                    <BrowserPage mode="FOR_RENT" />
+                  </Suspense>
+                }
+              />
+              <Route path="/product-details" element={<ProductDetails />} />
+            </Route>
+
+            <Route path="/" element={<AuthLayout />}>
+              <Route path="/sign" element={<SignupPage />} />
+            </Route>
+            
+          </Routes>
+        </ThemeProvider>
+        <ReactQueryDevtools
+          initialIsOpen={false}
+          buttonPosition="bottom-left"
+        />
+      </QueryClientProvider>
       {/* Start Browser Page */}
     </>
   );

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 
 //  LOCAL COMPONENTS
-import {Button} from "@/Components";
+import {ButtonLocal} from "@/Components";
 import {IconLabel,DetailsRooms} from "@/features/browser";
 import { cardVariants } from "../../../animations/BrowserAnimation";
 
@@ -55,7 +55,7 @@ const CardBrowser = React.memo(({ view, data, i }) => {
           >
             {data.badge}
           </span>
-          <button
+          <ButtonLocal
             className={`flex items-center  justify-center w-8 h-8 text-[#9CA3AF] rounded-full bg-white hover:bg-gray-100 ${
               liked && "bg-gray-100 text-red-500"
             } shadow-sm cursor-pointer hover:text-red-500 `}
@@ -70,7 +70,7 @@ const CardBrowser = React.memo(({ view, data, i }) => {
             }
           >
             <Heart className="h-4 w-4 text-inherit" />
-          </button>
+          </ButtonLocal>
         </div>
         {/* IMAGE */}
         <img
@@ -117,9 +117,9 @@ const CardBrowser = React.memo(({ view, data, i }) => {
           areaSqm={data.area_sqm}
         />
 
-        <Button as={Link} to="/product-details" variant=" w-full block purple-interactive  mt-3">
+        <ButtonLocal as={Link} to="/product-details" variant=" w-full block purple-interactive  mt-3">
           view details
-        </Button>
+        </ButtonLocal>
       </div>
     </motion.div>
   );

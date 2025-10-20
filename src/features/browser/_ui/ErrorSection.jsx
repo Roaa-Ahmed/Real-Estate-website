@@ -1,5 +1,5 @@
 import React from 'react'
-import {Section,Button} from '@/Components'
+import {Section,ButtonLocal} from '@/Components'
 
 const ErrorSection = ({error,refetch}) => {
   return (
@@ -12,12 +12,12 @@ const ErrorSection = ({error,refetch}) => {
               <p className="text-gray-600 mb-3">
                 Something went wrong. Please try again.
               </p>
-              <Button
+              <ButtonLocal
                 variant="!text-gray-700 gray-interactive"
                 onClick={refetch}
               >
                 retry
-              </Button>
+              </ButtonLocal>
             </div>
           )}
         </div>

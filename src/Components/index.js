@@ -1,7 +1,7 @@
 // src/components/ui
 export { default as Section } from "./ui/Section";
 export { default as Heading } from "./ui/Heading";
-export { default as Button } from "./ui/Button";
+export { default as ButtonLocal } from "./ui/ButtonLocal";
 export { default as LiFooter } from "./ui/LiFooter";
 export { default as LiNavbar } from "./ui/LiNavbar";
 export { default as LiNavbarMobile } from "./ui/LiNavbarMobile";

@@ -7,7 +7,7 @@ import { layoutVariants } from "../animations/BrowserAnimation";
 import { Outlet } from "react-router-dom";
 import { AnimatePresence,motion } from "framer-motion";
 
-const Layout = () => {
+const MainLayout = () => {
   return (
     <>
       <Navbar />
@@ -26,4 +26,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default MainLayout;

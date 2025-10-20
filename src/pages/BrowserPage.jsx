@@ -8,6 +8,7 @@ import {
   FilterBrowser,
   useProductsFilters,
 } from "@/features/browser";
+import SignUpForm from "./SignupPage";
 
 const BrowserPage = React.memo(({ mode }) => {
   const [view, setView] = useState(true);
@@ -17,7 +18,7 @@ const BrowserPage = React.memo(({ mode }) => {
   useEffect(() => {
     setStatus(mode);
     setPage(1);
-  }, [mode]);
+  }, [mode,setPage,setStatus]);
 
   return (
     <>
@@ -25,6 +26,7 @@ const BrowserPage = React.memo(({ mode }) => {
         <SearchBrowser modeNavigate={mode} />
         <FilterBrowser view={view} setView={setView} />
         <ResultsBrowser view={view} setView={setView} modeNavigate={mode} />
+        <SignUpForm/>
       </Section>
     </>
   );
