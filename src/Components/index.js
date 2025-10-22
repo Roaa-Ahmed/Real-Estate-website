@@ -6,7 +6,6 @@ export { default as LiFooter } from "./ui/LiFooter";
 export { default as LiNavbar } from "./ui/LiNavbar";
 export { default as LiNavbarMobile } from "./ui/LiNavbarMobile";
 export { default as ScrollTopButton } from "./ui/ScrollTopButton";
-// export { default as BugReportForm } from "./ui/form";
 export { default as Input } from "./ui/input";
 export { default as OverlayImage } from "./ui/OverlayImage";
 

@@ -6,7 +6,7 @@ import {
   SocialButtons,
   AuthLayoutPage,
 } from "@/features/auth";
-import { FieldSeparator } from "@/components/ui/field";
+import { FieldSeparator } from "@/Components/ui/field";
 
 const SignupPage = () => {
   return (
