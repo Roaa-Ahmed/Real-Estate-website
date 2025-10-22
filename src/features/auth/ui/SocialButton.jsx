@@ -6,7 +6,7 @@ const SocialButton = ({ icon, label,...props }) => {
     <Button
       startIcon={icon}
       variant="contained"
-      className="!max-w-[188px] !py-3  !bg-[rgba(245,244,246,1)]
+      className="w-full sm:w-fit !max-w-[250px] sm:!max-w-[188px] !py-3  !bg-[rgba(245,244,246,1)]
        !text-[rgba(0,0,0,0.32)]  !text-xs !normal-case !font-[poppins] 
        !rounded-[8px] text-nowrap "
       {...props}
