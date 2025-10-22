@@ -23,7 +23,7 @@ const SigninForm = () => {
   return (
     <AuthForm
       fields={fields}
-      buttonText="Log in"
+      buttonText="Login"
       onSubmit={handleSubmit}
       isLogin={true}
     />

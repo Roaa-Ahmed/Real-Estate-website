@@ -4,7 +4,7 @@ import { LandingAuth } from "@/features/auth";
 
 const AuthLayoutPage = ({ children, imagePosition = "" }) => {
   return (
-    <div className="w-full max-w-6xl  ">
+    <div className="w-full max-w-6xl mx-3 md:mx-0 overflow-hidden rounded-2xl md:rounded-none ">
       <div className={"flex flex-col gap-6 relative "}>
         <OverlayImage />
 
@@ -14,7 +14,7 @@ const AuthLayoutPage = ({ children, imagePosition = "" }) => {
         >
           <LandingAuth />
           <div
-            className={`flex-1/11 p-6 md:pb-30 md:pt-20 bg-[rgba(255,255,255,1)]
+            className={`flex-1/11 px-6 py-15 md:pb-30 md:pt-20 bg-[rgba(255,255,255,1)]
         ${
           imagePosition === "right"
             ? "md:rounded-r-[40px]"

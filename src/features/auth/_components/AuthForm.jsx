@@ -48,7 +48,7 @@ const AuthForm = ({ fields, onSubmit, buttonText, isLogin,classButton,classField
       )}
       <Button
         className={`w-full max-w-[405px] block text-[rgba(248,250,255,1)]
-         text-base font-medium mt-8 !mx-auto  capitalize
+         text-base font-medium mt-11 !mx-auto  capitalize
           bg-[linear-gradient(90deg,_rgba(102,_126,_234,_1)_0%,_rgba(118,_75,_162,_1)_100%)] 
         hover:shadow-lg shadow-accent-foreground active:scale-105 transition-all ${classButton}`}
         type="submit"
