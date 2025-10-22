@@ -2,10 +2,13 @@
 @import "./styles/fonts.css";
 
 body {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif !important; */
+    font-family: var(--font-poppins)!important;
+
 }
 
 @theme {
+   --font-poppins: "Poppins", sans-serif;
   --color-primary: #4f46e5;
   --color-hover-pri: #5356eb;
   --color-active-pri: #3730a3;
@@ -14,6 +17,10 @@ body {
   --color-hover-sec: #e5e7eb;
   --color-active-sec: #d1d5db;
 }
+
+/* body{
+    @apply font-[poppins]
+  } */
 
 .flexItemCenter {
   @apply flex items-center flex-wrap;
@@ -28,11 +35,13 @@ body {
     text-nowrap;
 }
 @layer base {
+  
   input:-webkit-autofill,
   textarea:-webkit-autofill,
   select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
     -webkit-text-fill-color: #000 !important;
+    
   }
 
   input:-moz-autofill,
@@ -41,4 +50,5 @@ body {
     box-shadow: 0 0 0px 1000px white inset !important;
     -moz-text-fill-color: #000 !important;
   }
+  
 }

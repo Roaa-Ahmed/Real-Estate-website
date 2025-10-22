@@ -148,7 +148,8 @@ const SearchBrowser = React.memo(() => {
 
         <ButtonLocal
           type="submit"
-          variant="w-full h-12.5   purple-interactive  self-end  text-base flex justify-center items-center"
+          variant="w-full h-12.5   purple-interactive  
+          self-end  text-base flex justify-center items-center"
         >
           <Search className="h-5 w-5 me-1" />
           <span>search</span>

@@ -26,7 +26,6 @@ const BrowserPage = React.memo(({ mode }) => {
         <SearchBrowser modeNavigate={mode} />
         <FilterBrowser view={view} setView={setView} />
         <ResultsBrowser view={view} setView={setView} modeNavigate={mode} />
-        <SignUpForm/>
       </Section>
     </>
   );

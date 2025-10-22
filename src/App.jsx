@@ -35,6 +35,8 @@ import Home from "./pages/Home";
 import ProductDetails from "./pages/productDetails";
 import SignupPage from "./pages/SignupPage";
 import AuthLayout from "./layouts/AuthLayout";
+import SigninPage from "./pages/SigninPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
 
 function Fallback() {
   return <LoadingSection isAllPage={true} variant="!min-h-screen" />;
@@ -82,9 +84,10 @@ function App() {
             </Route>
 
             <Route path="/" element={<AuthLayout />}>
-              <Route path="/sign" element={<SignupPage />} />
+              <Route path="/signup" element={<SignupPage />} />
+              <Route path="/login" element={<SigninPage />} />
+              <Route path="/resetpassword" element={<ResetPasswordPage />} />
             </Route>
-            
           </Routes>
         </ThemeProvider>
         <ReactQueryDevtools
