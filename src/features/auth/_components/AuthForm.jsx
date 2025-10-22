@@ -4,9 +4,9 @@ import { Link } from "react-router";
 import { useForm } from "@tanstack/react-form";
 
 // LOCAL COMPONENTS
-import { FieldGroup } from "@/components/ui/Field";
+import { FieldGroup } from "@/Components/ui/Field";
 import { FormInputField } from "@/Components/formUi";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/Components/ui/button";
 
 
 
