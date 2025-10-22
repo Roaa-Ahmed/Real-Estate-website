@@ -319,7 +319,7 @@ const Navbar = () => {
                       <span className="font-medium">Profile</span>
                     </motion.div>
                     <motion.a
-                      href="#"
+                      href="/signup"
                       className="block w-full rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-3 text-center text-white font-medium shadow-lg"
                       onClick={closeSidebar}
                       whileHover={{
