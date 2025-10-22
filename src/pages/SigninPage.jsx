@@ -7,10 +7,10 @@ const SigninPage = () => {
 <AuthLayoutPage imagePosition='right'>
     <h1 className="text-[26px] text-center font-medium capitalize
                text-[rgba(13,4,31,1)] mx-auto">
-                log in
+                login
               </h1>
 
-              <SocialButtons />
+              <SocialButtons isLogin={true}/>
               <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card 
                max-w-[40px] ext-[rgba(0,0,0,0.32) text-lg mx-auto !mb-[50px]">
                 Or

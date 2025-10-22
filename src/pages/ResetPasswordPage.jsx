@@ -2,16 +2,18 @@ import React from "react";
 
 import { OverlayImage } from "@/Components";
 import { ResetPasswordForm } from "@/features/auth";
+import { useMediaQuery } from "@mui/material";
 
 const ResetPasswordPage = () => {
+  const isSmall=useMediaQuery('(max-width:600px)')
   return (
-    <div className="w-full max-w-6xl  ">
+    <div className="w-full max-w-6xl ">
       <div className={"flex justify-center items-center relative "}>
-        <OverlayImage />
+        {!isSmall&&<OverlayImage />}
         <div
-          className={`w-xl p-6 md:pb-30 md:pt-20 my-15 bg-[rgba(255,255,255,1)] 
+          className={`w-xl p-6 md:pb-30 md:pt-20 my-15 mx-3 sm:mx-auto bg-[rgba(255,255,255,1)] 
       
-          z-50  rounded-[40px]`}
+          z-50  overflow-hidden rounded-2xl sm:rounded-[40px]`}
         >
           <div className="max-w-[450px] mx-auto">
 
