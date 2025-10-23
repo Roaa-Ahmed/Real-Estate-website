@@ -8,6 +8,7 @@ export { default as LiNavbarMobile } from "./ui/LiNavbarMobile";
 export { default as ScrollTopButton } from "./ui/ScrollTopButton";
 export { default as Input } from "./ui/input";
 export { default as OverlayImage } from "./ui/OverlayImage";
+export { default as LogoWithLabel } from "./ui/LogoWithLabel";
 
 
 // src/components/common

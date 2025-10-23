@@ -9,7 +9,6 @@ import {
 } from "@/features/browser";
 
 // EXTERNAL COMPONENTS
-import { useMediaQuery } from "@mui/material";
 
 // LOCAL ICONS
 import Icon from "../../../assets/photos/Vector (1).svg?react";
@@ -21,10 +20,12 @@ import HotelIcon from "@mui/icons-material/Hotel";
 
 //  CONSTANTS
 import { SORT_OPTIONS } from "../../../constants/Options";
+import useIsSmallScreen from "@/hooks/useIsSmallScreen ";
 
 const FilterBrowser = React.memo(({ view, setView }) => {
 
-  const isSmall = useMediaQuery("(max-width:600px)");
+    const isSmallScreen = useIsSmallScreen();
+
   const setSort = useProductsFilters((s) => s.setSort);
   const setPage = useProductsFilters((s) => s.setPage);
   const setFilters = useProductsFilters((s) => s.setFilters);
@@ -86,7 +87,7 @@ const FilterBrowser = React.memo(({ view, setView }) => {
 
           <div className=" justify-start flexItemCenter gap-1.5 sm:gap-3">
             <SelectFilters
-              text={isSmall ? "bed" : "bedroom"}
+              text={isSmallScreen ? "bed" : "bedroom"}
               icon={HotelIcon}
               isNumeric={true}
               iconProps={{
@@ -105,7 +106,7 @@ const FilterBrowser = React.memo(({ view, setView }) => {
             />
 
             <SelectFilters
-              text={isSmall ? "bath" : "bathroom"}
+              text={isSmallScreen ? "bath" : "bathroom"}
               icon={Icon}
               isNumeric={true}
               variant="w-3.5 h-3.5 sm:w-4.5 h-4.5 mb-1"

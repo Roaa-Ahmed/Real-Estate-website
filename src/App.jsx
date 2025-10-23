@@ -37,6 +37,7 @@ import SignupPage from "./pages/SignupPage";
 import AuthLayout from "./layouts/AuthLayout";
 import SigninPage from "./pages/SigninPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
+import Chatbot from "./pages/Chatbot";
 
 function Fallback() {
   return <LoadingSection isAllPage={true} variant="!min-h-screen" />;
@@ -87,6 +88,8 @@ function App() {
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/login" element={<SigninPage />} />
               <Route path="/resetpassword" element={<ResetPasswordPage />} />
+                            <Route path="/chatbot" element={<Chatbot />} />
+
             </Route>
           </Routes>
         </ThemeProvider>
