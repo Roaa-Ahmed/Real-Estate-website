@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field ,FieldLabel,FieldError} from "@/components/ui/field"
+import { Field ,FieldLabel,FieldError} from "@/Components/ui/field"
 import {Input} from '@/Components'
 
 const FormInputField = ({form,type,name,placeholder,label,classField}) => {
