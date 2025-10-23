@@ -2,14 +2,15 @@ import React from "react";
 
 import { OverlayImage } from "@/Components";
 import { ResetPasswordForm } from "@/features/auth";
-import { useMediaQuery } from "@mui/material";
+import useIsSmallScreen from "@/hooks/useIsSmallScreen ";
 
 const ResetPasswordPage = () => {
-  const isSmall=useMediaQuery('(max-width:600px)')
+    const isSmallScreen = useIsSmallScreen();
+
   return (
     <div className="w-full max-w-6xl ">
       <div className={"flex justify-center items-center relative "}>
-        {!isSmall&&<OverlayImage />}
+        {!isSmallScreen&&<OverlayImage />}
         <div
           className={`w-xl p-6 md:pb-30 md:pt-20 my-15 mx-3 sm:mx-auto bg-[rgba(255,255,255,1)] 
       

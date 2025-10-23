@@ -52,3 +52,17 @@ body {
   }
   
 }
+@layer utilities {
+  .chat-gradient-gray {
+    @apply bg-[linear-gradient(90deg,rgba(238,238,238,1)_0%,rgba(233,233,233,1)_100%)];
+  }
+  .chat-gradient-blue {
+    @apply bg-[linear-gradient(90deg,rgba(59,130,246,1)_0%,rgba(147,51,234,1)_100%)];
+  }
+  .chat-card {
+    @apply bg-[rgba(255,255,255,0.21)] shadow-lg border-0 rounded-4xl md:rounded-[6rem];
+  }
+  .chat-inner {
+    @apply bg-white border-[rgba(173,181,195,0.24)] rounded-4xl md:rounded-[4rem];
+  }
+}

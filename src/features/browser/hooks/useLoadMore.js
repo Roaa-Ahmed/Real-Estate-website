@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 
   useEffect(() => {
     const el = ref.current;
-    console.log(el)
     if (!el) return;
 
     const obs = new IntersectionObserver(

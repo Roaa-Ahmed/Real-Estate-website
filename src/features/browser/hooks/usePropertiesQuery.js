@@ -1,8 +1,8 @@
 // LOCAL COMPONENTS
 import { fetchProperties } from "@/features/browser";
+import useIsSmallScreen from "@/hooks/useIsSmallScreen ";
 
 // EXTERNAL COMPONENTS
-import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   useQuery,
   keepPreviousData,
@@ -12,7 +12,8 @@ import {
 const usePropertiesQuery=( {status, page, sort, search, filters,limit})=> {
 
 
-  const isMobile = useMediaQuery("(max-width:768px)");
+    const isSmallScreen = useIsSmallScreen("(max-width:768px)");
+
   const queryKey = [
     "properties",
     "page",
@@ -37,7 +38,7 @@ const usePropertiesQuery=( {status, page, sort, search, filters,limit})=> {
     placeholderData: keepPreviousData,
     keepPreviousData: true,
 
-    enabled: !isMobile,
+    enabled: !isSmallScreen,
   });
 
   const infiniteQuery = useInfiniteQuery({
@@ -73,10 +74,10 @@ const usePropertiesQuery=( {status, page, sort, search, filters,limit})=> {
 
     placeholderData: keepPreviousData,
     keepPreviousData: true,
-    enabled: isMobile,
+    enabled: isSmallScreen,
   });
 
-  if (isMobile) {
+  if (isSmallScreen) {
     return {
       ...infiniteQuery,
       isInfinite: true,
