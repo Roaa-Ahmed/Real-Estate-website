@@ -13,8 +13,26 @@ body {
   --color-secondary: #f3f4f6;
   --color-hover-sec: #e5e7eb;
   --color-active-sec: #d1d5db;
+
+  --color-error:#4f46e5 ;
 }
 
+<<<<<<< Updated upstream
+=======
+
+
+/* .input-error {
+  color: red !important;
+  border-color: red !important;
+  -webkit-text-fill-color: red !important;
+} */
+
+
+/* body{
+    @apply font-[poppins]
+  } */
+
+>>>>>>> Stashed changes
 .flexItemCenter {
   @apply flex items-center flex-wrap;
 }
@@ -27,18 +45,36 @@ body {
     font-medium
     text-nowrap;
 }
+
+
+
+
+
+
+
+
+
 @layer base {
   input:-webkit-autofill,
   textarea:-webkit-autofill,
   select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+<<<<<<< Updated upstream
     -webkit-text-fill-color: #000 !important;
+=======
+    -webkit-text-fill-color: inherit !important ;
+    
+>>>>>>> Stashed changes
   }
 
   input:-moz-autofill,
   textarea:-moz-autofill,
   select:-moz-autofill {
     box-shadow: 0 0 0px 1000px white inset !important;
-    -moz-text-fill-color: #000 !important;
+    -moz-text-fill-color: inherit !important;
   }
 }
+
+/* [data-error="yes"] {
+  color: red !important;
+} */
