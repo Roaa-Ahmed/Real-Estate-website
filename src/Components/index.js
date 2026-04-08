@@ -9,7 +9,7 @@ export { default as ScrollTopButton } from "./ui/ScrollTopButton";
 export { default as Input } from "./ui/input";
 export { default as OverlayImage } from "./ui/OverlayImage";
 export { default as LogoWithLabel } from "./ui/LogoWithLabel";
-// export { default as LogoWithLabel } from "./ui/scroll-area";
+export { Button } from "./ui/Button";
 
 
 // src/components/common
