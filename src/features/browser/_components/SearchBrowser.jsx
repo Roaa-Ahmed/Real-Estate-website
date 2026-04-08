@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // LOCAL COMPONENTS
-import { Section, Heading, Button, ScrollInTo } from "@/Components";
+import { Section, Heading, ButtonLocal, ScrollInTo } from "@/Components";
 import { SelectSearch,useProductsFilters } from "@/features/browser";
 import {
   PRICE_RANGE_OPTIONS,
@@ -11,6 +11,7 @@ import {
 
 // EXTERNAL ICONS
 import { Search } from "lucide-react";
+// import ButtonLocal from './../../../Components/ui/ButtonLocal';
 
 const SearchBrowser = React.memo(() => {
   // hooks
@@ -91,7 +92,7 @@ const SearchBrowser = React.memo(() => {
           text="Discover the perfect home from our extensive collection"
         />
         <div className="mx-auto sm:mx-0 sm:ms-auto">
-          <Button
+          <ButtonLocal
             variant={`${
               current == "buy" ? "purple-interactive" : "gray-interactive"
             } me-3`}
@@ -100,9 +101,9 @@ const SearchBrowser = React.memo(() => {
             }}
           >
             buy
-          </Button>
+          </ButtonLocal>
 
-          <Button
+          <ButtonLocal
             variant={
               current == "rent" ? "purple-interactive" : "gray-interactive"
             }
@@ -111,7 +112,7 @@ const SearchBrowser = React.memo(() => {
             }}
           >
             rent
-          </Button>
+          </ButtonLocal>
         </div>
       </div>
       {/* SEARCH FORM */}
@@ -145,13 +146,14 @@ const SearchBrowser = React.memo(() => {
           }}
         />
 
-        <Button
+        <ButtonLocal
           type="submit"
-          variant="w-full h-12.5   purple-interactive  self-end  text-base flex justify-center items-center"
+          variant="w-full h-12.5   purple-interactive  
+          self-end  text-base flex justify-center items-center"
         >
           <Search className="h-5 w-5 me-1" />
           <span>search</span>
-        </Button>
+        </ButtonLocal>
       </form>
     </Section>
   );

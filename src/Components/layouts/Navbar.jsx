@@ -135,7 +135,7 @@ const Navbar = () => {
               <div className="hidden sm:flex sm:gap-4">
                 <motion.a
                   className="relative overflow-hidden rounded-md bg-gradient-to-r from-indigo-600 to-purple-600 px-3 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base text-white shadow-lg font-inter font-normal leading-[100%] tracking-normal text-center"
-                  href="#"
+                  href="/signup"
                   whileHover="hover"
                   whileTap={{ scale: 0.95 }}
                   initial={{ backgroundPosition: "0% 50%" }}
@@ -319,7 +319,7 @@ const Navbar = () => {
                       <span className="font-medium">Profile</span>
                     </motion.div>
                     <motion.a
-                      href="#"
+                      href="/signup"
                       className="block w-full rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-3 text-center text-white font-medium shadow-lg"
                       onClick={closeSidebar}
                       whileHover={{

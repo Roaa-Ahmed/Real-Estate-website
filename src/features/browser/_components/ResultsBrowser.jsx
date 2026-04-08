@@ -13,11 +13,13 @@ import {
 } from "@/features/browser";
 
 // EXTERNAL COMPONENTS
-import { CircularProgress, useMediaQuery } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { flushSync } from "react-dom";
+import useIsSmallScreen from "@/hooks/useIsSmallScreen ";
 
 const ResultsBrowser = React.memo(({ view, modeNavigate }) => {
-  const isMobile = useMediaQuery("(max-width:768px)");
+    const isSmallScreen = useIsSmallScreen("(max-width:768px)");
+
   const { status, page, sort, search, filters, limit } = useProductsFilters();
   const setPage = useProductsFilters((s) => s.setPage);
 
@@ -38,8 +40,6 @@ const ResultsBrowser = React.memo(({ view, modeNavigate }) => {
   const sentinelRef = useLoadMoreOnIntersect(() => {
     if (hasMore&&!isLoadingMore ) {
       loadMore?.();
-    console.log(loadMore())
-    console.log(hasMore)
     }
   });
   const saleOrRent = modeNavigate === "FOR_SALE" ? "sale" : "rent";
@@ -85,7 +85,7 @@ const ResultsBrowser = React.memo(({ view, modeNavigate }) => {
           items.map((item, ind) => (
             <CardBrowser key={item.id} view={view} data={item} i={ind} />
           ))}
-        {isMobile && hasMore && !isLoadingMore&&(
+        {isSmallScreen && hasMore && !isLoadingMore&&(
           <div
             className="w-full max-w-2xl h-64 flex items-center justify-center "
             style={{ overflowAnchor: "none" }}
@@ -97,7 +97,7 @@ const ResultsBrowser = React.memo(({ view, modeNavigate }) => {
       </div>
 
       {/* PAGINATION */}
-      {!isMobile && data?.totalCount > 0 && (
+      {!isSmallScreen && data?.totalCount > 0 && (
         <PaginationSection
           count={data?.totalPages ?? 1}
           onChange={(nextPage) => {

@@ -311,6 +311,7 @@ const Features = () => {
           </div>
 
           {/* Floating Chat Button */}
+          <Link to='chatbot'>
           <div className="fixed bottom-8 right-8 z-10">
             <div
               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 rounded-full shadow-lg cursor-pointer transition-all duration-200 hover:scale-110 hover:shadow-xl active:scale-95"
@@ -321,6 +322,7 @@ const Features = () => {
               <FaComment className="text-xl" />
             </div>
           </div>
+          </Link>
         </div>
       </div>
 

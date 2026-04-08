@@ -8,10 +8,11 @@ import { layoutVariants } from "../../../animations/BrowserAnimation";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "@mui/material";
+import useIsSmallScreen from "@/hooks/useIsSmallScreen ";
 
 const PaginationSection = ({ count, onChange, page }) => {
-  const isSmall = useMediaQuery("(max-width:600px)");
+    const isSmallScreen = useIsSmallScreen();
+
   return (
     <Section variant="!border-b-0 ">
       <motion.div variants={layoutVariants} initial="hidden" whileInView="show">
@@ -24,7 +25,7 @@ const PaginationSection = ({ count, onChange, page }) => {
             onChange={(_, p) => onChange(p)}
             variant="outlined"
             shape="rounded"
-            size={isSmall ? "medium" : "large"}
+            size={isSmallScreen ? "medium" : "large"}
             sx={{
               "& ul": { justifyContent: "center", gap: "4px 2px" },
               "& .MuiPaginationItem-root": {

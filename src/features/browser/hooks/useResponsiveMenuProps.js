@@ -1,9 +1,7 @@
-import { useTheme } from "@mui/material/styles";
-import { useMediaQuery } from "@mui/material";
+import useIsSmallScreen from "@/hooks/useIsSmallScreen ";
 
  function useResponsiveMenuProps() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSmallScreen = useIsSmallScreen();
 
   const mobileMenuProps = {
     anchorReference: "none",
@@ -34,6 +32,6 @@ import { useMediaQuery } from "@mui/material";
  
   
 
-  return isMobile&& mobileMenuProps ;
+  return isSmallScreen&& mobileMenuProps ;
 }
 export default useResponsiveMenuProps
