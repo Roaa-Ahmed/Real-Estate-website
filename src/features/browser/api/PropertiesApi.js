@@ -1,8 +1,9 @@
 import axios from "axios";
 import { Search } from "lucide-react";
 const isDev = process.env.NODE_ENV === "development";
+
 export const API_URL = isDev
-  ? "http://localhost:5174"
+  ? "http://localhost:5175"
   : "https://real-estate-hub-data-api.onrender.com";
 
 function buildPropertyParams(status, page, sort, search, filters, limit) {

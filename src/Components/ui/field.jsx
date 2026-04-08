@@ -92,6 +92,7 @@ function FieldSeparator({ children, className, ...props }) {
 
 function FieldError({ className, children, errors, ...props }) {
   const content = useMemo(() => {
+    // console.log(errors)
     if (children) {
       return children;
     }
@@ -103,6 +104,7 @@ function FieldError({ className, children, errors, ...props }) {
     if (errors?.length == 1) {
       return errors[0]?.message;
     }
+          console.log(errors)
 
     return (
       <ul className="ml-4 flex list-disc flex-col gap-1">
@@ -122,7 +124,9 @@ function FieldError({ className, children, errors, ...props }) {
     <div
       role="alert"
       data-slot="field-error"
-      className={cn("text-destructive text-sm font-normal", className)}
+
+      className={cn("max-w-[421px] text-destructive text-sm mx-auto font-normal", className)}
+      // className={cn("text-destructive text-sm font-normal", className)}
       {...props}
     >
       {content}

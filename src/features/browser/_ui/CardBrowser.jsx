@@ -73,10 +73,12 @@ const CardBrowser = React.memo(({ view, data, i }) => {
           </ButtonLocal>
         </div>
         {/* IMAGE */}
+        {console.log(data.images[0])}
         <img
           src={data.images[0]}
+          // src=  "https://picsum.photos/seed/prop1-2/800/500"
           alt={data.title}
-          className=" w-full object-cover rounded-t-xl rounded-b-none"
+          className=" w-full h-64 object-cover rounded-t-xl rounded-b-none"
           loading="lazy"
         />
       </div>
