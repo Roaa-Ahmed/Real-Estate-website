@@ -79,7 +79,7 @@ const CardBrowser = React.memo(({ view, data, i }) => {
           // src=  "https://picsum.photos/seed/prop1-2/800/500"
           alt={data.title}
           className=" w-full h-64 object-cover rounded-t-xl rounded-b-none"
-          loading="lazy"
+          // loading="lazy"
         />
       </div>
 
