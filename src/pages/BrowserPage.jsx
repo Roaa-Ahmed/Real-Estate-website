@@ -8,7 +8,7 @@ import {
   FilterBrowser,
   useProductsFilters,
 } from "@/features/browser";
-import SignUpForm from "./SignupPage";
+// import SignUpForm from "./SignupPage";
 
 const BrowserPage = React.memo(({ mode }) => {
   const [view, setView] = useState(true);

@@ -125,7 +125,7 @@ function FieldError({ className, children, errors, ...props }) {
       role="alert"
       data-slot="field-error"
 
-      className={cn("max-w-[421px] text-destructive text-sm mx-auto font-normal", className)}
+      className={cn("max-w-[421px] text-red-500  text-sm mx-auto font-normal", className)}
       // className={cn("text-destructive text-sm font-normal", className)}
       {...props}
     >

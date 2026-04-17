@@ -58,7 +58,7 @@ body {
 }
 
 
-@import "./styles/fonts.css";
+/* @import "./styles/fonts.css"; */
 
 body {
   font-family: "Poppins", sans-serif;

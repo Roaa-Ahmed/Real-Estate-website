@@ -34,10 +34,10 @@ const FormInputField = ({form,type,name,placeholder,existEmail,label,classField}
               autoComplete="off"
               className={inputClasses}
 
-              /* //  className="max-w-[421px] mx-auto pl-0 border-0 border-b
+              // className="max-w-[421px] mx-auto pl-0 border-0 border-b
               //   border-[rgba(0,_0,_0,_0.12)] bg-transparent rounded-none 
-              //   focus-visible:ring-0 transition-colors placeholder:text-lg
-              //    placeholder:text-[rgba(0,0,0,0.32)] placeholder:font-normal placeholder:capitalize" */
+              // focus-visible:ring-0 transition-colors placeholder:text-lg
+              //   placeholder:text-[rgba(0,0,0,0.32)] placeholder:font-normal placeholder:capitalize " 
             />
             
             {isInvalid && <FieldError errors={field.state.meta.errors} />}
