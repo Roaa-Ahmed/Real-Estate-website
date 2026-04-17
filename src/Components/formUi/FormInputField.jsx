@@ -3,19 +3,22 @@ import { Field ,FieldLabel,FieldError} from "@/Components/ui/field"
 import {Input} from '@/Components'
 import { cn } from '@/lib/utils'
 
-const FormInputField = ({form,type,name,placeholder,label,existEmail,classField}) => {
+const FormInputField = ({form,type,name,placeholder,existEmail,label,classField}) => {
   return (
     <form.Field
       name={name}
       children={(field) => {
         const isInvalid =
           field.state.meta.isTouched && !field.state.meta.isValid
-            const inputClasses = cn(
+
+  const inputClasses = cn(
           "max-w-[421px] mx-auto pl-0 border-0 border-b border-[rgba(0,0,0,0.12)]",
           "bg-transparent rounded-none focus-visible:ring-0 transition-colors",
           "placeholder:text-lg placeholder:text-[rgba(0,0,0,0.32)] placeholder:font-normal",
           existEmail && name === "email" && "!text-red-500 border-red-500"
         );
+
+          
         return (
           <Field className={classField}data-invalid={isInvalid}>
             <FieldLabel className='sr-only' htmlFor={field.name}>{label}</FieldLabel>
@@ -30,10 +33,11 @@ const FormInputField = ({form,type,name,placeholder,label,existEmail,classField}
               placeholder={placeholder}
               autoComplete="off"
               className={inputClasses}
-              //  className="max-w-[421px] mx-auto pl-0 border-0 border-b
+
+              /* //  className="max-w-[421px] mx-auto pl-0 border-0 border-b
               //   border-[rgba(0,_0,_0,_0.12)] bg-transparent rounded-none 
               //   focus-visible:ring-0 transition-colors placeholder:text-lg
-              //    placeholder:text-[rgba(0,0,0,0.32)] placeholder:font-normal placeholder:capitalize"
+              //    placeholder:text-[rgba(0,0,0,0.32)] placeholder:font-normal placeholder:capitalize" */
             />
             
             {isInvalid && <FieldError errors={field.state.meta.errors} />}
