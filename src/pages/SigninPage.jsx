@@ -1,8 +1,17 @@
 import { FieldSeparator } from '@/Components/ui/field'
 import {AuthLayoutPage,HaveAccount,SigninForm, SocialButtons} from '@/features/auth'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const SigninPage = () => {
+
+useEffect(() => {
+ const script = document.createElement("script");
+ script.src = "https://accounts.google.com/gsi/client";
+ script.async = true;
+ document.body.appendChild(script);
+}, []);
+
+
   return (
 <AuthLayoutPage imagePosition='right'>
     <h1 className="text-[26px] text-center font-medium capitalize

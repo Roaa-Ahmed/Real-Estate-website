@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
 
 //  LOCAL COMPONENTS
-import {ButtonLocal} from "@/Components";
-import {IconLabel,DetailsRooms} from "@/features/browser";
+import { ButtonLocal } from "@/Components";
+import { IconLabel, DetailsRooms } from "@/features/browser";
 import { cardVariants } from "../../../animations/BrowserAnimation";
 
 //EXTERNAL COMPONENTS
@@ -21,17 +21,16 @@ const CardBrowser = React.memo(({ view, data, i }) => {
   const [liked, setLiked] = React.useState(false);
 
   const handleClickVariant = (message, variant) => () => {
-    setLiked(perv => !perv);
+    setLiked((perv) => !perv);
     enqueueSnackbar(message, { variant });
-
   };
   const stylePrimum = useMemo(() => {
     const pp = data.badge.toLowerCase();
     return pp == "new"
       ? "bg-[#EF4444]"
       : pp == "primum"
-      ? "bg-[#D4AF37]"
-      : "bg-primary";
+        ? "bg-[#D4AF37]"
+        : "bg-primary";
   }, [data]);
 
   return (
@@ -59,15 +58,13 @@ const CardBrowser = React.memo(({ view, data, i }) => {
             className={`flex items-center  justify-center w-8 h-8 text-[#9CA3AF] rounded-full bg-white hover:bg-gray-100 ${
               liked && "bg-gray-100 text-red-500"
             } shadow-sm cursor-pointer hover:text-red-500 `}
-            onClick={
-              handleClickVariant(
-                liked
-                  ? `${data.title} removed from wishlist!`
-                  : `${data.title} added to wishlist`,
+            onClick={handleClickVariant(
+              liked
+                ? `${data.title} removed from wishlist!`
+                : `${data.title} added to wishlist`,
 
-                liked ? 'info' : "success"
-              )
-            }
+              liked ? "info" : "success",
+            )}
           >
             <Heart className="h-4 w-4 text-inherit" />
           </ButtonLocal>
@@ -76,10 +73,11 @@ const CardBrowser = React.memo(({ view, data, i }) => {
         {console.log(data.images[0])}
         <img
           src={data.images[0]}
-          // src=  "https://picsum.photos/seed/prop1-2/800/500"
           alt={data.title}
-          className=" w-full h-64 object-cover rounded-t-xl rounded-b-none"
-          // loading="lazy"
+          className=" w-full          h-64 object-cover rounded-t-xl rounded-b-none"
+          width="500"
+          height="333"
+          fetchPriority="high"
         />
       </div>
 
@@ -119,12 +117,16 @@ const CardBrowser = React.memo(({ view, data, i }) => {
           areaSqm={data.area_sqm}
         />
 
-        <ButtonLocal as={Link} to="/product-details" variant=" w-full block purple-interactive  mt-3">
+        <ButtonLocal
+          as={Link}
+          to="/product-details"
+          variant=" w-full block purple-interactive  mt-3"
+        >
           view details
         </ButtonLocal>
       </div>
     </motion.div>
   );
-})
+});
 
 export default CardBrowser;

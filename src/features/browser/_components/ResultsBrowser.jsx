@@ -36,6 +36,7 @@ const ResultsBrowser = React.memo(({ view, modeNavigate }) => {
     isLoadingMore,
     items,
   } = usePropertiesQuery({status, page, sort, search, filters, limit});
+  
 
   const sentinelRef = useLoadMoreOnIntersect(() => {
     if (hasMore&&!isLoadingMore ) {
@@ -111,3 +112,21 @@ const ResultsBrowser = React.memo(({ view, modeNavigate }) => {
 });
 
 export default ResultsBrowser;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

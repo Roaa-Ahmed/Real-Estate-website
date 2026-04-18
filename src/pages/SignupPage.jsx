@@ -91,7 +91,7 @@
 
 
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // LOCAL COMPONENTS
 import {
@@ -118,6 +118,16 @@ const SignupPage = () => {
     refetch,
     mutation,
   });
+
+
+useEffect(() => {
+ const script = document.createElement("script");
+ script.src = "https://accounts.google.com/gsi/client";
+ script.async = true;
+ document.body.appendChild(script);
+}, []);
+
+
 
   return (
     <AuthLayoutPage imagePosition="left">

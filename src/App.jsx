@@ -28,16 +28,22 @@ import { ReactQueryDevtools } from "./../node_modules/@tanstack/react-query-devt
 // PAGES
 
 const BrowserPage = lazy(() => import("./pages/BrowserPage"));
+const ProductDetails = lazy(() => import("./pages/ProductDetails"));
+const SignupPage = lazy(() => import("./pages/SignupPage"));
+// const AuthLayout = lazy(() => import("./pages/AuthLayout"));
+const SigninPage = lazy(() => import("./pages/SigninPage"));
+const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
+const Chatbot = lazy(() => import("./pages/Chatbot"));
 
 // FUNCTIONS
 import { queryClient } from "./lib/queryClient";
 import Home from "./pages/Home";
-import ProductDetails from "./pages/productDetails";
-import SignupPage from "./pages/SignupPage";
+// import ProductDetails from "./pages/productDetails";
+// import SignupPage from "./pages/SignupPage";
 import AuthLayout from "./layouts/AuthLayout";
-import SigninPage from "./pages/SigninPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
-import Chatbot from "./pages/Chatbot";
+// import SigninPage from "./pages/SigninPage";
+// import ResetPasswordPage from "./pages/ResetPasswordPage";
+// import Chatbot from "./pages/Chatbot";
 
 function Fallback() {
   return <LoadingSection isAllPage={true} variant="!min-h-screen" />;
@@ -81,15 +87,55 @@ function App() {
                   </Suspense>
                 }
               />
-              <Route path="/product-details" element={<ProductDetails />} />
+              {/* <Route path="/product-details" element={<ProductDetails />} /> */}
+
+              <Route
+                path="/product-details"
+                element={
+                  <Suspense fallback={<Fallback />}>
+                    <ProductDetails />
+                  </Suspense>
+                }
+              />
             </Route>
 
             <Route path="/" element={<AuthLayout />}>
-              <Route path="/signup" element={<SignupPage />} />
-              <Route path="/login" element={<SigninPage />} />
-              <Route path="/resetpassword" element={<ResetPasswordPage />} />
-                            <Route path="/chatbot" element={<Chatbot />} />
+              {/* <Route path="/signup" element={<SignupPage />} /> */}
+              <Route
+                path="/signup"
+                element={
+                  <Suspense fallback={<Fallback />}>
+                    <SignupPage />
+                  </Suspense>
+                }
+              />
 
+              {/* <Route path="/login" element={<SigninPage />} /> */}
+
+              <Route
+                path="/login"
+                element={
+                  <Suspense fallback={<Fallback />}>
+                    <SigninPage />
+                  </Suspense>
+                }
+              />
+
+              {/* <Route path="/resetpassword" element={<ResetPasswordPage />} /> */}
+              <Route
+                path="/resetpassword"
+                element={
+                  <Suspense fallback={<Fallback />}>
+                    <ResetPasswordPage />
+                  </Suspense>
+                }
+              />
+
+              {/* <Route path="/chatbot" element={<Chatbot />} /> */}
+
+              <Route path="/chatbot" element={<Suspense fallback={<Fallback />}>
+                    <Chatbot />
+                  </Suspense>} />
             </Route>
           </Routes>
         </ThemeProvider>
